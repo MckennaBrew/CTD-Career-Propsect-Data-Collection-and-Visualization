@@ -1,0 +1,42 @@
+.fullWidthHeader{
+	background-color:rgb(200,200,200);
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	text-align:center; /*left, right, center, justify*/
+}
+
+.fullWidth{
+	background-color:rgb(255,255,255);
+	padding:0px;
+	box-sizing:border-box;
+	text-align:center; /*left, right, center, justify*/
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
+.fullWidthForm{
+	background-color:rgb(255,255,255);
+	padding:0px;
+  width: 50%;
+	box-sizing:border-box;
+	text-align:center; /*left, right, center, justify*/
+  position: relative;
+  margin: auto;
+}
+
+#h1_title{
+	font-family: 'Roboto', sans-serif;
+	color: rgb(0,0,0);
+	font-size: 5em;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 500px;
+  width: 49%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+	display:inline-block;
+}
