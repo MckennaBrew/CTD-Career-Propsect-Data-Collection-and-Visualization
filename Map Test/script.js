@@ -52,13 +52,26 @@ var data = [
     {"id":"US.DC","value":50}
 ];
 
+var scale = anychart.scales.ordinalColor([
+  {less: 10},
+  {from: 10, to: 20},
+  {greater: 20}
+  ]);
+scale.colors(['#bbbbbb', '#9d9d9d', '#767676']);
+
 anychart.onDocumentLoad(function () {
-  var map = anychart.map(data);
+  var map = anychart.map();
   map.geoData(anychart.maps['united_states_of_america']);
 
-  // set the series
+  // create and set the series
   var series = map.choropleth(data);
   series.geoIdField('id');
+  map.geoData(anychart.maps['united_states_of_america']);
+
+  //enable legend, add colorscale to map using the above scale, connect scale to legend
+  map.legend(true);
+  series.colorScale(scale);
+  map.legend().itemsSourceMode('categories');
 
 
   // set the container
