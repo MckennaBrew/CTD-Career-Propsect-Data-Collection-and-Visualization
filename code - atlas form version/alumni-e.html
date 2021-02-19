@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+
+    <script type="text/javascript" src="js/form.js" defer></script>
+
+    <title>Collectiviz</title>
+
+</head>
+
+<body>
+
+    <h1>Undergraduate TAM/CTD Alumni Form</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Please note: If you have more than one job, please fill this out as it pertains to what you would consider to be your primary job.</small></p>
+    
+    <form>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 67%;" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Accessability Help: 'for needs to equal the input ID, aria-describedby needs to provide what the small text is for' -->
+
+
+    <div class="form-group">
+        <label for="ID NAME">How many jobs have you applied to?</label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a company</option>
+          <option>Need Options</option>
+        </select>
+    </div>
+
+    <fieldset class="form-group">
+        <legend  class="legend">Is the position full-time or part-time?</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ptft" id="___ID NAME____" value="option1">
+          <label class="form-check-label" for="ID NAME">
+            Full-time
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ptft" id="___ID NAME____" value="option2">
+          <label class="form-check-label" for="ID NAME">
+            Part-time
+          </label>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <label for="ID NAME">What is the title of your job?</label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a job title</option>
+          <option>Need Options</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ID NAME">What state is your job located in? </label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a state</option>
+          <option>Need Options</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ID NAME">How many hours do you work per week at your job?</label>
+        <input type="number" class="form-control" id="__ID NAME___" aria-describedby="nameHelp" placeholder="Enter number of hours">
+    </div>
+
+    <div class="form-group">
+        <label for="ID NAME">Please select a salary range below that best fits your job.</label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a salary range</option>
+          <option>Unpaid</option>
+          <option>$1 - 20,000 per year</option>
+          <option>$20,001 - 30,000 per year</option>
+          <option>$30,001 - 40,000 per year</option>
+          <option>$40,001 - 50,000 per year</option>
+          <option>$50,001 - 60,000 per year</option>
+          <option>$60,001 - 70,000 per year</option>
+          <option>$70,001 - 80,000 per year</option>
+          <option>$80,001 - 90,000 per year</option>
+          <option>$90,001 - 100,000 per year</option>
+          <option>Above $100,001 per year</option>
+        </select>
+        <small id="salaryHelp" class="form-text text-muted">If you are paid hourly, please convert you wage to salaried.</small>
+    </div>
+
+    <fieldset class="form-group">
+        <legend  class="legend">How satisfied are you with your job?</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="jobSatisfaction" id="___ID NAME____" value="option1">
+          <label class="form-check-label" for="ID NAME">
+            Extremely dissatisfied
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="jobSatisfaction" id="___ID NAME____" value="option2">
+          <label class="form-check-label" for="ID NAME">
+            Somewhat dissatisfied
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="jobSatisfaction" id="___ID NAME____" value="option3">
+          <label class="form-check-label" for="ID NAME">
+            Neither satisfied nor dissatisfied
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="jobSatisfaction" id="___ID NAME____" value="option4">
+          <label class="form-check-label" for="ID NAME">
+            Somewhat satisfied
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="jobSatisfaction" id="___ID NAME____" value="option5">
+          <label class="form-check-label" for="ID NAME">
+            Extremely satisfied
+          </label>
+        </div>                
+    </fieldset>
+
+    <div class="form-group">
+        <label for="ID NAME">How long did it take you to find your job post-graduation?</label>
+        <input type="number" class="form-control" id="__ID NAME___" aria-describedby="nameHelp" placeholder="Enter number of months">
+    </div>
+
+    <div class="form-group">
+        <label for="ID NAME">How many jobs have you applied to?</label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a number of jobs</option>
+          <option>0 jobs</option>
+          <option>1 to 10 jobs</option>
+          <option>11 to 20 jobs</option>
+          <option>21 to 30 jobs</option>
+          <option>31 to 40 jobs</option>
+          <option>41 to 50 jobs</option>
+          <option>51 to 60 jobs</option>
+          <option>More than 60 jobs</option>
+        </select>
+    </div>
+
+    </form>
+
+    <button onclick="backToPage1()" type="bootstrap" class="btn btn-secondary" disabled>Back</button>
+
+    <button onclick="takeMeHome()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+</body>
+
+</html>

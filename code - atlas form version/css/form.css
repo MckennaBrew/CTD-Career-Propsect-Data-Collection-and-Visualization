@@ -1,0 +1,37 @@
+html {
+	scroll-behavior: smooth;
+	overflow: hidden;
+}
+
+
+body {
+	max-width: 1000px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin: auto;
+	padding-right: 5%;
+	padding-left: 5%;
+	background-color: rgba(250,250,250,1);
+	overflow: hidden;
+}
+
+.legend {
+	font-size: 16px;
+}
+
+.space {
+	height: 800px;
+}
+
+.formSection {
+	overflow: scroll;
+	height: 100vh;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+/*https://css-tricks.com/forums/topic/hide-vertical-scrollbar-but-still-scrollable/*/
+
+::-webkit-scrollbar {
+display: none;
+}
