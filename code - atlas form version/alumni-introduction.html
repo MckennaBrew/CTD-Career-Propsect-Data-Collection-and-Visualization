@@ -38,22 +38,22 @@
     <!-- Accessability Help: 'for needs to equal the input ID, aria-describedby needs to provide what the small text is for' -->
 
     <div class="form-group">
-        <label for="ID NAME">First Name</label>
+        <label for="ID NAME">First name *</label>
         <input type="name" class="form-control" id="__ID NAME___" aria-describedby="nameHelp" placeholder="Enter first name">
     </div>
 
     <div class="form-group">
-        <label for="ID NAME">Last Name</label>
+        <label for="ID NAME">Last name *</label>
         <input type="name" class="form-control" id="__ID NAME___" aria-describedby="nameHelp" placeholder="Enter last name">
     </div>
 
     <div class="form-group">
-        <label for="ID NAME">Email address</label>
+        <label for="ID NAME">Email address *</label>
         <input type="email" class="form-control" id="__ID NAME__" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
 
     <fieldset class="form-group">
-        <legend class="legend">What is your current employment status?</legend>
+        <legend class="legend">What is your current employment status? *</legend>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="employementStatus" id="employmentStatus1" value="working for a company">
           <label class="form-check-label" for="employmentStatus1">
@@ -81,7 +81,7 @@
     </fieldset>
 
     <fieldset class="form-group">
-        <legend class="legend">Are you enrolled in, or have you completed a graduate program?</legend>
+        <legend class="legend">Are you enrolled in, or have you completed a graduate program? *</legend>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="grad program" id="enrolled" value="option1">
           <label class="form-check-label" for="ID NAME">
@@ -123,37 +123,49 @@
     <div class="form-group">
         <label for="ID NAME">Professional title</label>
         <select class="form-control" id="____ID NAME____">
-          <option selected value="whatever damean needs" disabled>Select a job title</option>
+          <option selected value="whatever damean needs" disabled>Select a job title *</option>
           <option>Need Options</option>
         </select>
     </div>
+
+    <div class="form-group">
+        <small><label for="exampleFormControlTextarea1">If not on list, please provide it below.</label></small>
+        <textarea class="form-control" id="____ID NAME____" rows="1"></textarea>
+    </div>  
 
     <div class="form-group">
         <label for="ID NAME">Business name</label>
         <select class="form-control" id="____ID NAME____">
-          <option selected value="whatever damean needs" disabled>Select a company name</option>
+          <option selected value="whatever damean needs" disabled>Select a company name *</option>
           <option>Need Options</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What do you do on a day-to-day basis?</label>
+        <small><label for="exampleFormControlTextarea1">If not on list, please provide it below.</label></small>
+        <textarea class="form-control" id="____ID NAME____" rows="1"></textarea>
+    </div>  
+
+    <div>
+      
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What do you do on a day-to-day basis? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What do you hope to do next?</label>
+        <label for="exampleFormControlTextarea1">What do you hope to do next? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What do you hope to be doing in 5 years?</label>
+        <label for="exampleFormControlTextarea1">What do you hope to be doing in 5 years? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
 
     </form>
-
-    <button onclick="introduction()" type="bootstrap" class="btn btn-secondary">Back</button>
 
     <button onclick="thirdFormPage()" type="bootstrap" class="btn btn-primary">Continue</button>
 
@@ -176,18 +188,17 @@
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What degree program at what university did you graduate from?</label>
+        <label for="exampleFormControlTextarea1">What degree program at what university did you graduate from? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         <small id="salaryHelp" class="form-text text-muted">For example, "Master's in Spanish Literature at University of Transylvania."</small>
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">When did you or will you graduate?</label>
+        <label for="exampleFormControlTextarea1">When did you or will you graduate? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         <small id="salaryHelp" class="form-text text-muted">For example, "Spring 2021"</small>
     </div>
 
-    <button onclick="introduction()" type="bootstrap" class="btn btn-secondary">Back</button>
     <button onclick="professionalPreparation()" type="bootstrap" class="btn btn-primary">Continue</button>
 
   </div>
@@ -208,12 +219,12 @@
     <form>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What are your current professional goals?</label>
+        <label for="exampleFormControlTextarea1">What are your current professional goals? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
     </div>
 
     <fieldset class="form-group">
-        <legend  class="legend">BS CTD has prepared me to achieve these goals.</legend>
+        <legend  class="legend">BS CTD has prepared me to achieve these goals. *</legend>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="prep" id="___ID NAME____" value="option1">
           <label class="form-check-label" for="ID NAME">
@@ -247,7 +258,7 @@
     </fieldset>
 
     <fieldset class="form-group">
-        <legend  class="legend">I use the skills I learned through the CTD major frequently.</legend>
+        <legend  class="legend">I use the skills I learned through the CTD major frequently. *</legend>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="skillUse" id="___ID NAME____" value="option1">
           <label class="form-check-label" for="ID NAME">
@@ -281,7 +292,7 @@
     </fieldset>  
 
     <fieldset class="form-group">
-        <legend  class="legend">The CTD program helped influence my career and/or graduate education choices.</legend>
+        <legend  class="legend">The CTD program helped influence my career and/or graduate education choices. *</legend>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="influence" id="___ID NAME____" value="option1">
           <label class="form-check-label" for="ID NAME">
@@ -315,7 +326,7 @@
     </fieldset>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">On a scale of 0-10, how likely are you to recommend the TAM program to a student or prospective student?</label>
+        <label for="exampleFormControlTextarea1">On a scale of 0-10, how likely are you to recommend the TAM program to a student or prospective student? *</label>
         <input class="form-control" id="exampleFormControlTextarea1" rows="1" type="number" min="0" max="10"></input>
         <small id="NpsHelp" class="form-text text-muted">0 is "Not at all likely" while 10 is "Extremely likely."</small>
     </div>
@@ -327,7 +338,6 @@
 
     </form>
 
-    <button onclick="introduction()" type="bootstrap" class="btn btn-secondary">Back</button>
     <button onclick="ctdFeedback()" type="bootstrap" class="btn btn-primary">Continue</button>
 
   </div>
@@ -347,34 +357,32 @@
     <form>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What was your favorite part about being a student in the Creative Technology & Design program?</label>
+        <label for="exampleFormControlTextarea1">What was your favorite part about being a student in the Creative Technology & Design program? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>  
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What was your least favorite part about being a student in the Creative Technology & Design program?</label>
+        <label for="exampleFormControlTextarea1">What was your least favorite part about being a student in the Creative Technology & Design program? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>  
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What was the most useful part about being a student in the Creative Technology & Design program?</label>
+        <label for="exampleFormControlTextarea1">What was the most useful part about being a student in the Creative Technology & Design program? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div> 
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">What was the least useful part about being a student in the Creative Technology & Design program?</label>
+        <label for="exampleFormControlTextarea1">What was the least useful part about being a student in the Creative Technology & Design program? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div> 
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">If you were the ATLAS director for a day, what would be the first change you would make to the Creative Technology & Design program?</label>
+        <label for="exampleFormControlTextarea1">If you were the ATLAS director for a day, what would be the first change you would make to the Creative Technology & Design program? *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div> 
 
       
     </form>
-
-    <button onclick="introduction()" type="bootstrap" class="btn btn-secondary">Back</button>
 
     <button onclick="lastThoughts()" type="bootstrap" class="btn btn-primary">Continue</button>
 
@@ -395,7 +403,7 @@
     <form>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Tell us a little more: Share a few thoughts or reflections on your experience in the CTD program, provide suggestions, or tell us more about what you're doing now and what you hope to do in the future. </label>
+        <label for="exampleFormControlTextarea1">Tell us a little more: Share a few thoughts or reflections on your experience in the CTD program, provide suggestions, or tell us more about what you're doing now and what you hope to do in the future. *</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div> 
 
@@ -403,7 +411,7 @@
       
     </form>
 
-    <button onclick="introduction()" type="bootstrap" class="btn btn-secondary">Back</button>
+    <a class="btn btn-outlined-secondary" href="#introduction" role="button">Review Form</a>
 
     <button onclick="submit()" type="bootstrap" class="btn btn-primary">Submit!</button>
 
