@@ -73,7 +73,6 @@ function lastThoughts(){
 
 function submit(){
 	location.href = "#thankYou";
-	startConfetti();
 }
 
 
