@@ -3,8 +3,8 @@
 
 .container{ /*A box that will contain the entire website for centering purposes*/
 	width:100%; /*The container will try to fill the entire browser window width*/
-	max-width: 960px;
-	margin:0px; /*This line of code is the key.  0px margin top and bottom, auto margin left and right to center*/
+	max-width: 1080px;
+	margin:0 auto; /*This line of code is the key.  0px margin top and bottom, auto margin left and right to center*/
 	padding:0px;
 	box-sizing:border-box;/*Makes it so that padding does not add to a box's total width*/
 
@@ -30,7 +30,8 @@ body {
 
 header{
 	width:100%;
-	max-width: 960px;
+	max-width: 1080px;
+	margin: auto;
 	background-color: #0e0e0e;
 	padding:50px;
 	box-sizing:border-box;
@@ -40,7 +41,8 @@ header{
 
 footer{
 	width:100%;
-	max-width: 960px;
+	max-width: 1080px;
+	margin: auto;
 	background-color: #0e0e0e;
 	padding:50px;
 	box-sizing:border-box;
