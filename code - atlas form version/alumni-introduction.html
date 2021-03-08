@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Collectiviz CSS/JS -->
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+
+    <script type="text/javascript" src="js/form.js" defer></script>
+
+    <title>CTD Alumni Form</title>
+
+</head>
+
+<body>
+
+  <div id="introduction" class="formSection">
+
+	<h1>Introduction</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Thank you for taking the time to complete this short survey. Your input helps us to reflect on the program and helps guide its future direction.</small></p>
+	
+    <form>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Accessability Help: 'for needs to equal the input ID, aria-describedby needs to provide what the small text is for' -->
+
+    <div class="form-group">
+        <label for="ID NAME">First name *</label>
+        <input type="name" class="form-control" id="__ID NAME___" aria-describedby="nameHelp" placeholder="Enter first name">
+    </div>
+
+    <div class="form-group">
+        <label for="ID NAME">Last name *</label>
+        <input type="name" class="form-control" id="__ID NAME___" aria-describedby="nameHelp" placeholder="Enter last name">
+    </div>
+
+    <div class="form-group">
+        <label for="ID NAME">Email address *</label>
+        <input type="email" class="form-control" id="__ID NAME__" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <fieldset class="form-group">
+        <legend class="legend">What is your current employment status? *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="employmentStatus1" value="working for a company">
+          <label class="form-check-label" for="employmentStatus1">
+            Working for a company
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="employmentStatus2" value="working for myself">
+          <label class="form-check-label" for="employmentStatus">
+            Working for myself
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="employmentStatus3" value="not employed">
+          <label class="form-check-label" for="employmentStatus">
+            Not employed
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="employmentStatus4" value="in school">
+          <label class="form-check-label" for="employmentStatus">
+            In school
+          </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend class="legend">Are you enrolled in, or have you completed a graduate program? *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="grad program" id="enrolled" value="option1">
+          <label class="form-check-label" for="ID NAME">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="grad program" id="notEnrolled" value="option2">
+          <label class="form-check-label" for="ID NAME">
+            No
+          </label>
+        </div>
+    </fieldset>
+
+    </form>
+
+    <button onclick="secondFormPage()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="workExperience" class="formSection">
+  <h1>Work Experience</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Please share a few details about your work.</small></p>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+    
+    <div class="form-group">
+        <label for="ID NAME">Professional title</label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a job title *</option>
+          <option>Need Options</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <small><label for="exampleFormControlTextarea1">If not on list, please provide it below.</label></small>
+        <textarea class="form-control" id="____ID NAME____" rows="1"></textarea>
+    </div>  
+
+    <div class="form-group">
+        <label for="ID NAME">Business name</label>
+        <select class="form-control" id="____ID NAME____">
+          <option selected value="whatever damean needs" disabled>Select a company name *</option>
+          <option>Need Options</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <small><label for="exampleFormControlTextarea1">If not on list, please provide it below.</label></small>
+        <textarea class="form-control" id="____ID NAME____" rows="1"></textarea>
+    </div>  
+
+    <div>
+      
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What do you do on a day-to-day basis? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What do you hope to do next? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What do you hope to be doing in 5 years? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    </form>
+
+    <button onclick="thirdFormPage()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="graduateExperience" class="formSection">
+
+  <h1>Graduate Experience</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Please share a few details about your graduate experience.</small></p>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What degree program at what university did you graduate from? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+        <small id="salaryHelp" class="form-text text-muted">For example, "Master's in Spanish Literature at University of Transylvania."</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">When did you or will you graduate? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+        <small id="salaryHelp" class="form-text text-muted">For example, "Spring 2021"</small>
+    </div>
+
+    <button onclick="professionalPreparation()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="professionalPreparation" class="formSection">
+
+  <h1>Professional Preparation</h1>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What are your current professional goals? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+
+    <fieldset class="form-group">
+        <legend  class="legend">BS CTD has prepared me to achieve these goals. *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="___ID NAME____" value="option1">
+          <label class="form-check-label" for="ID NAME">
+            Strongly agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="___ID NAME____" value="option2">
+          <label class="form-check-label" for="ID NAME">
+            Agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="___ID NAME____" value="option3">
+          <label class="form-check-label" for="ID NAME">
+            Neither agree nor disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="___ID NAME____" value="option4">
+          <label class="form-check-label" for="ID NAME">
+            Disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="___ID NAME____" value="option5">
+          <label class="form-check-label" for="ID NAME">
+            Strongly disagree
+          </label>
+        </div>                
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend  class="legend">I use the skills I learned through the CTD major frequently. *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="___ID NAME____" value="option1">
+          <label class="form-check-label" for="ID NAME">
+            Strongly agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="___ID NAME____" value="option2">
+          <label class="form-check-label" for="ID NAME">
+            Agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="___ID NAME____" value="option3">
+          <label class="form-check-label" for="ID NAME">
+            Neither agree nor disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="___ID NAME____" value="option4">
+          <label class="form-check-label" for="ID NAME">
+            Disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="___ID NAME____" value="option5">
+          <label class="form-check-label" for="ID NAME">
+            Strongly disagree
+          </label>
+        </div>                
+    </fieldset>  
+
+    <fieldset class="form-group">
+        <legend  class="legend">The CTD program helped influence my career and/or graduate education choices. *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="___ID NAME____" value="option1">
+          <label class="form-check-label" for="ID NAME">
+            Strongly agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="___ID NAME____" value="option2">
+          <label class="form-check-label" for="ID NAME">
+            Agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="___ID NAME____" value="option3">
+          <label class="form-check-label" for="ID NAME">
+            Neither agree nor disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="___ID NAME____" value="option4">
+          <label class="form-check-label" for="ID NAME">
+            Disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="___ID NAME____" value="option5">
+          <label class="form-check-label" for="ID NAME">
+            Strongly disagree
+          </label>
+        </div>                
+    </fieldset>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">On a scale of 0-10, how likely are you to recommend the TAM program to a student or prospective student? *</label>
+        <input class="form-control" id="exampleFormControlTextarea1" rows="1" type="number" min="0" max="10"></input>
+        <small id="NpsHelp" class="form-text text-muted">0 is "Not at all likely" while 10 is "Extremely likely."</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Please explain.</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>  
+
+    </form>
+
+    <button onclick="ctdFeedback()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="ctdFeedback" class="formSection">
+
+  <h1>CTD Feedback</h1>
+    
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was your favorite part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>  
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was your least favorite part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>  
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was the most useful part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was the least useful part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">If you were the ATLAS director for a day, what would be the first change you would make to the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> 
+
+      
+    </form>
+
+    <button onclick="lastThoughts()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="lastThoughts" class="formSection">
+
+  <h1>Last Thoughts</h1>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Tell us a little more: Share a few thoughts or reflections on your experience in the CTD program, provide suggestions, or tell us more about what you're doing now and what you hope to do in the future. *</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> 
+
+    <p>Thank you again for taking the time for this survey. We appreciate your input and your ongoing involvement in the ATLAS Institute.</p>
+      
+    </form>
+
+    <a class="btn btn-outlined-secondary" href="#introduction" role="button">Review Form</a>
+
+    <button onclick="submit()" type="bootstrap" class="btn btn-primary">Submit!</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <div id="thankYou" class="formSection">
+
+    <h1>Thank You!</h1>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <p>Check out the public visualization and join the CTD LinkedIn group to stay connected.</p>
+
+  </div>
+
+    <div class="space"></div>
+
+</body>
+
+</html>
