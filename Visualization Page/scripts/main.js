@@ -8,13 +8,34 @@ var gradDateChart = new Chart(ctx, {
  data: {
     labels: gradSemester,
     datasets: [{
-        label: 'Graduation Dates',
         data: numGraduated,
         //backgroundColor: "rgba(255,210,0,1)",
          borderColor: "rgba(255,210,0,1)",
          borderWidth: 5
     }]
  },
+ options: {
+    legend: {
+        display: false,
+        labels:{
+          fontColor: 'white'
+        }
+    },
+    tooltips: {
+        callbacks: {
+           label: function(tooltipItem) {
+                  return tooltipItem.yLabel;
+           }
+        }
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+}
 });
 
 
