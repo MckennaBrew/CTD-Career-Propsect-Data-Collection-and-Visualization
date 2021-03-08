@@ -4,14 +4,15 @@ var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fal
 
 var ctx = document.getElementById('myChart');
 var gradDateChart = new Chart(ctx, {
- type: 'line',
+ type: 'bar',
  data: {
     labels: gradSemester,
     datasets: [{
         label: 'Graduation Dates',
         data: numGraduated,
-        borderColor: "rgba(255,210,0,1)",
-        lineTension: .2
+        //backgroundColor: "rgba(255,210,0,1)",
+         borderColor: "rgba(255,210,0,1)",
+         borderWidth: 5
     }]
  },
 });
