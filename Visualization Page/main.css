@@ -142,8 +142,8 @@ a {
 
 .alumniSpotlight{
 	flex: 100%;
+	max-width: 1080px;
 	background-color: #0e0e0e;
-	text-align: center;
 	color:white;
 }
 
