@@ -76,7 +76,7 @@ h3 {
 }
 
 p {
-	font-size: 30px;
+	font-size: 20px;
 	line-height: 28px;
 	font-family: neue-haas-grotesk-display, sans-serif;
 	font-weight: 400;
@@ -120,17 +120,22 @@ a {
 	background-color: #0e0e0e;
 	text-align: center;
 	color:white;
+	padding: 30px;
+	justify-content: center;
+
 }
 
 .location{
 	flex: 100%;
 	text-align: center;
+	padding: 30px;
 }
 
 .reflectionStats{
 	flex: 40%;
 	background-color: white;
 	text-align: center;
+	padding: 30px;
 }
 
 .alumniQuotes{
@@ -138,6 +143,8 @@ a {
 	background-color: #0e0e0e;
 	color: white;
 	text-align: center;
+	padding: 30px;
+	text-align: left;
 }
 
 .alumniSpotlight{

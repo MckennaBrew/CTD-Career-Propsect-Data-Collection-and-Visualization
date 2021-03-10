@@ -41,46 +41,33 @@ var gradDateChart = new Chart(ctx, {
 
 //job title word cloud
 var job_data = [
-{x: "Associate UI/UX Engineer", value: 1},
-{x: "Associate Systems + Human Factors Engineer", value: 1},
-{x: "Software Development Engineer", value: 1},
-{x: "UX Designer", value: 1},
-{x: "Administrative Assistant", value: 1},
-{x: "Associate UX Designer", value: 1},
-{x: "Software Engineer & UI/UX Designer", value: 1},
-{x: "Graphic Designer", value: 1},
-{x: "Software Developer", value: 1},
-{x: "MLS Coordinator", value: 1},
-{x: "Associate developer", value: 1},
-{x: "ASPIRE Leadership Program Digital Technologist", value: 1},
-{x: "Creative Developer", value: 1},
-{x: "Motion Graphic Designer", value: 1},
-{x: "Web Designer", value: 1},
-{x: "Application Support Specialist", value: 1},
-{x: "Software Engineer", value: 1},
-{x: "QA Associate Tester", value: 1},
-{x: "Control Systems Programmer", value: 1},
-{x: "Support Engineer", value: 1},
-{x: "Software developer", value: 1},
-{x: "Media Tech Associate", value: 1},
-{x: "Web Designer", value: 1},
-{x: "Interaction Designer and Developer", value: 1},
-{x: "QA / Development Support", value: 1},
-{x: "Software Engineer", value: 1},
-{x: "Software Engineer", value: 1},
-{x: "Sales Development Rep", value: 1},
-{x: "Software Developer", value: 1},
-{x: "Graphic Designer", value: 1},
-{x: "Teacher", value: 1},
-{x: "Fabricator", value: 1},
-{x: "Event Services Project Manager", value: 1},
-{x: "Operations Coordinator", value: 1},
-{x: "AV Technician/Warehouse Manager", value: 1},
-{x: "Assembler/Problem Solver", value: 1},
-{x: "Front-End Designer and Developer", value: 1},
-{x: "Owner / Associate Media Production", value: 1},
-{x: "CEO", value: 1},
-{x: "Freelance designer/developer", value: 1}
+  {x: "UI/UX Engineer", value: 1},
+  {x: "Systems & Human Factors Engineer", value: 1},
+  {x: "Software Developer", value: 4},
+  {x: "UX Designer", value: 3},
+  {x: "Administrative Assistant", value: 1},
+  {x: "Graphic Designer", value: 3},
+  {x: "MLS Coordinator", value: 1},
+  {x: "Associate Developer", value: 1},
+  {x: "Digital Technologist", value: 1},
+  {x: "Creative Developer", value: 1},
+  {x: "Web Designer", value: 2},
+  {x: "Application Support Specialist", value: 2},
+  {x: "Software Engineer", value: 4},
+  {x: "Quality Assurance Tester", value: 2},
+  {x: "Control Systems Programmer", value: 1},
+  {x: "Support Engineer", value: 1},
+  {x: "Media Tech Associate", value: 1},
+  {x: "Designer & Developer", value: 2},
+  {x: "Sales Development Representative", value: 1},
+  {x: "Teacher", value: 1},
+  {x: "Fabricator", value: 1},
+  {x: "Project Manager", value: 1},
+  {x: "Operations Coordinator", value: 1},
+  {x: "AV Technician & Warehouse Manager", value: 1},
+  {x: "Assembler", value: 1},
+  {x: "Front-End Designer & Developer", value: 1},
+  {x: "Entreprenuer & Owner", value: 2}
 ];
 
 
@@ -88,7 +75,7 @@ anychart.onDocumentLoad(function() {
   // create an instance of a pie chart
   var chart = anychart.tagCloud(job_data);
   // set chart title
-  chart.title("Career Titles");
+  chart.title();
   // configure angles
   chart.angles([0]);
   chart.background().fill("#0e0e0e")
