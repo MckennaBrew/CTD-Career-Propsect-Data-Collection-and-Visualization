@@ -1,6 +1,11 @@
+
+@import url("https://use.typekit.net/cgz8kbk.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&display=swap');
+
 .container{ /*A box that will contain the entire website for centering purposes*/
 	width:100%; /*The container will try to fill the entire browser window width*/
-	margin:0px; /*This line of code is the key.  0px margin top and bottom, auto margin left and right to center*/
+	max-width: 1080px;
+	margin:0 auto; /*This line of code is the key.  0px margin top and bottom, auto margin left and right to center*/
 	padding:0px;
 	box-sizing:border-box;/*Makes it so that padding does not add to a box's total width*/
 
@@ -8,15 +13,26 @@
 	flex-wrap:wrap; /*wrap, nowrap, wrap-reverse*/
 	flex-direction:row; /*row, row-reverse, column, column-reverse*/
 	justify-content: space-between;
+	align-items: center;
 }
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1600px; /* or 950px */
+}
+
 
 body {
   padding: 0;
   margin: 0;
+	/* max-width: 1600px; */
 }
 
 header{
 	width:100%;
+	max-width: 1080px;
+	margin: auto;
 	background-color: #0e0e0e;
 	padding:50px;
 	box-sizing:border-box;
@@ -26,10 +42,53 @@ header{
 
 footer{
 	width:100%;
+	max-width: 1080px;
+	margin: auto;
 	background-color: #0e0e0e;
 	padding:50px;
 	box-sizing:border-box;
 	text-align:center; /*left, right, center, justify*/
+	color: white;
+}
+
+h1 {
+	font-size: 36px;
+	font-family: 'Roboto Mono';
+	font-weight: 700;
+	line-height: 28px;
+	color: white;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-size: 20px;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+h3 {
+	font-size: 30px;
+	line-height: 30px;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 700;
+	margin-bottom: 4px;
+}
+
+p {
+	font-size: 20px;
+	line-height: 28px;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 400;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+a {
+	font-size: 30px;
+	padding: 10px;
+	padding-left: 0px;
 	color: white;
 }
 
@@ -38,6 +97,7 @@ footer{
 	background-color: #FFD200;
 	color: black;
 	text-align: center;
+	padding: 15px;
 }
 
 .graduationDate{
@@ -45,12 +105,15 @@ footer{
 	background-color: #0e0e0e;
 	color: white;
 	text-align: center;
+	padding: 30px;
 }
 
 .initialStats{
 	flex: 40%;
 	background-color: white;
 	text-align: center;
+	padding: 30px;
+	align-content: center;
 }
 
 .job_and_company_data{
@@ -58,17 +121,22 @@ footer{
 	background-color: #0e0e0e;
 	text-align: center;
 	color:white;
+	padding: 30px;
+	justify-content: center;
+
 }
 
 .location{
 	flex: 100%;
 	text-align: center;
+	padding: 30px;
 }
 
 .reflectionStats{
 	flex: 40%;
 	background-color: white;
 	text-align: center;
+	padding: 30px;
 }
 
 .alumniQuotes{
@@ -76,11 +144,95 @@ footer{
 	background-color: #0e0e0e;
 	color: white;
 	text-align: center;
+	padding: 30px;
+	text-align: left;
 }
 
 .alumniSpotlight{
 	flex: 100%;
+	max-width: 1080px;
 	background-color: #0e0e0e;
-	text-align: center;
 	color:white;
+}
+
+.carousel{
+		margin-top: 20px;
+}
+.carousel-item{
+		min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: top;
+	background-color: rgb(15,15,15);
+	padding: 30px;
+}
+
+#image {
+	width: 400px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+
+#profile {
+	width: 400px;
+	max-width: 800px;
+	margin-top: 5%;
+}
+
+#qAndA {
+	width: 1000px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	top: 20px;
+
+}
+
+.carousel-indicators {
+	/*currently at bottom*/
+}
+
+@media only screen and (max-width: 800px) {
+		.flex-container {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		h1, h2 {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			text-align: center;
+		}
+
+		.iconSet {
+			text-align: center;
+		}
+
+		.scroll-container {
+			max-height: 50vh;
+			overflow-y: auto;
+		}
+
+		#profile, #qAndA   {
+			margin-left: 0%;
+			margin-right: 0%;
+			width: 100%;
+		}
+
+		#image {
+			margin-left: 0%;
+			margin-right: 0%;
+			width: 40%;
+		}
 }

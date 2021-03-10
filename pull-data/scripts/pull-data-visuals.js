@@ -8,28 +8,18 @@ var firebaseConfig = {
   appId: "1:733621844188:web:ef066f41098fa6b5511c19"
 };
 
-var compNames = [];
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 var dataRef = firebase.database().ref('alumni/');
 
-dataRef.orderByChild("companyName").on("child_added", function(data) {
-   console.log(data.val().companyName);
+//////////////////////////////////////////
 
-   compNames.push(data.val().companyName.toString());
+// GRADUATION DATE LINE CHART ///////////////////////////////////////////////////////////////////////////////////////////
 
-   //var dataMessageString = "Companies CTD Majors work at: " + compNames;
-   //var messageCountString = "Entries Count: " + compNames.length;
+//////////////////////////////////////////
 
-   //document.getElementById("dataMessage").innerHTML = dataMessageString;
-   //document.getElementById("messageCount").innerHTML = messageCountString;
-
-});
-
-
-
-// Graduation Date Line Chart
 var gradDates = [];
 
 dataRef.orderByChild("gradTerm").on("child_added", function(data){
@@ -37,7 +27,7 @@ dataRef.orderByChild("gradTerm").on("child_added", function(data){
 
   gradDates.push(data.val().gradTerm.toString());
 
-}
+});
 
 var numGraduated = [4, 13, 9, 15, 13];
 var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fall 2019'];
@@ -64,8 +54,12 @@ var gradDateChart = new Chart(ctx, {
 // Spring 2017, Fall 2018, Spring 2019, Fall 2019
 // number gradutaed needs to have the same order as string array (first correlates to Fall 2017)
 
+//////////////////////////////////////////
 
-// Total Participants ///////////////////////////
+// TOTAL PARTICIPANTS ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
 var participants = [];
 
 dataRef.orderByChild("first_name").on("child_added", function(data){
@@ -76,40 +70,274 @@ dataRef.orderByChild("first_name").on("child_added", function(data){
   var totalPart = participants.length;
 
   document.getElementById("totalParticipants").innerHTML = totalPart;
+});
+
+//////////////////////////////////////////
+
+// PERCENT EMPLOYED ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+var employed = [];
+
+dataRef.orderByChild("employmentStatus").on("child_added", function(data){
+  console.log(data.val().employmentStatus);
+
+  employed.push(data.val().employmentStatus.toString());
+
+  percentEmployed(employed);
+
+});
+
+function percentEmployed(temp){
+
+  var count = 0;
+
+  for (i = 0; i < temp.length; i++){
+    if(temp[i] == "working for a company" || temp[i] == "working for myself"){
+      count = count + 1;
+    }
+  }
+
+  var percent = (count/temp.length) * 100;
+
+  document.getElementById("percentEmployed").innerHTML = percent + "%";
+}
+
+//////////////////////////////////////////
+
+// NUMBER ATTTENDING GRAD SCHOOL ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+var gradProgram = [];
+
+dataRef.orderByChild("gradProgram").on("child_added", function(data){
+  console.log(data.val().gradProgram);
+
+  gradProgram.push(data.val().gradProgram.toString());
+
+  numInGrad(gradProgram);
+
+});
+
+function numInGrad(temp){
+
+  var count = 0;
+
+  for (i = 0; i < temp.length; i++){
+    if(temp[i] == "Yes"){
+      count = count + 1;
+    }
+  }
+
+  document.getElementById("numAttendedGrad").innerHTML = count;
+
+}
+
+//////////////////////////////////////////
+
+// CAREER WORD CLOUD ////////////////////////////////////////////////////////////////////////////////////////////
+// need an array of arrays with job title and count of occurences
+
+//////////////////////////////////////////
+
+
+
+
+
+
+//////////////////////////////////////////
+
+// COMPANY WORD CLOUD ////////////////////////////////////////////////////////////////////////////////////////////
+// need an array of arrays with job title and count of occurences
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+//////////////////////////////////////////
+
+// LOCATION MAP ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////
+
+// PERCENT PREPARED FOR THEIR GOALS ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+var prepared = [];
+
+dataRef.orderByChild("preparedLevel").on("child_added", function(data){
+  console.log(data.val().preparedLevel);
+
+  prepared.push(data.val().preparedLevel.toString());
+
+  prepLevel(prepared);
+
+});
+
+function prepLevel(temp){
+
+  var count = 0;
+
+  for (i = 0; i < temp.length; i++){
+    if(temp[i] == "agree"){
+      count = count + 1;
+    }
+  }
+
+  var percent = (count/temp.length) * 100;
+
+  document.getElementById("percentPreparedGoals").innerHTML = percent + "%";
 }
 
 
-// Percent employed //// /////////////////////////////////////////////
 
-// Number atttending grad school //// /////////////////////////////////////////////
+//////////////////////////////////////////
+
+// PERCENT RECOMENND PROGRAM ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+var recommend = [];
+
+dataRef.orderByChild("likelyToRecommend").on("child_added", function(data){
+  console.log(data.val().likelyToRecommend);
+
+  recommend.push(data.val().likelyToRecommend.toString());
+
+  percentRecommend(recommend);
+
+});
+
+function percentRecommend(temp){
+
+  var count = 0;
+
+  for (i = 0; i < temp.length; i++){
+    if(temp[i] == "agree"){
+      count = count + 1;
+    }
+  }
+
+  var percent = (count/temp.length) * 100;
+
+  document.getElementById("percentRecommend").innerHTML = percent + "%";
+}
 
 
 
-// Career Word cloud /////////////////////////////////////////////////
-// need an array of arrays with job title and count of occurences
+
+
+//////////////////////////////////////////
+
+// PERCENT USE SKILLS ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+
+var skills = [];
+
+dataRef.orderByChild("skillUse").on("child_added", function(data){
+  console.log(data.val().skillUse);
+
+  skills.push(data.val().skillUse.toString());
+
+  percentSkills(skills);
+
+});
+
+function percentSkills(temp){
+
+  var count = 0;
+
+  for (i = 0; i < temp.length; i++){
+    if(temp[i] == "agree"){
+      count = count + 1;
+    }
+  }
+
+  var percent = (count/temp.length) * 100;
+
+  document.getElementById("perecentUseSkills").innerHTML = percent + "%";
+}
 
 
 
 
-// Company Word Cloud /////////////////////////////////////////////////
-// need an array of arrays with job title and count of occurences
+
+//////////////////////////////////////////
+
+// CAREER GOALS ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+var goals = [];
+
+dataRef.orderByChild("proffGoals").on("child_added", function(data){
+  console.log(data.val().proffGoals);
+
+  goals.push(data.val().proffGoals.toString());
+
+  alumniGoals(skills);
+
+});
+
+function alumniGoals(temp){
+
+  var rand = getRandomInt(temp.length);
+
+  document.getElementById("careerGoals").innerHTML = temp[rand];
 
 
-//github test
 
-// Location Map //// /////////////////////////////////////////////
+}
+
+//////////////////////////////////////////
+
+// FAVORITE ASPECT ///////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+
+var favorite = [];
+
+dataRef.orderByChild("mostFav").on("child_added", function(data){
+  console.log(data.val().mostFav);
+
+  favorite.push(data.val().mostFav.toString());
+
+  favoriteAspect(favorite);
+
+});
+
+function favoriteAspect(temp){
+
+  var rand = getRandomInt(temp.length);
+
+  document.getElementById("favAspect").innerHTML = temp[rand];
+}
 
 
 
-// Reflection - Favorite Part
 
 
-
-
-
-//
-
-
+///////////////////////////////////////////
 //job title word cloud
 var job_data = [
 {x: "Associate UI/UX Engineer", value: 1},
