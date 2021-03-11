@@ -156,7 +156,6 @@ function condenseTitles(){
     if (exists(titleData, careerTitles[i]) == true) {
       //update value
       for (var j = 0; j < titleData.length; j++) {
-      console.log("here2");
         if (titleData[j][0] == careerTitles[i]) {
           x = titleData[j][1];
           console.log(x);
@@ -165,14 +164,12 @@ function condenseTitles(){
       }
     } else {
       // append to titleData
-      console.log("here3");
       titleData.push([careerTitles[i], 1]);
     }
   }
 }
 
 function exists(arr, search){
-	console.log("here");
   return arr.some(row => row.includes(search));
 }
 
@@ -200,7 +197,6 @@ function condenseCompanies(){
     if (exists(companyData, companyNames[i]) == true) {
       //update value
       for (var j = 0; j < companyData.length; j++) {
-      console.log("here2");
         if (companyData[j][0] ==companyNames[i]) {
           x = companyData[j][1];
           console.log(x);
@@ -209,14 +205,12 @@ function condenseCompanies(){
       }
     } else {
       // append to titleData
-      console.log("here3");
       companyData.push([companyNames[i], 1]);
     }
   }
 }
 
 function exists(arr, search){
-	console.log("here");
   return arr.some(row => row.includes(search));
 }
 
