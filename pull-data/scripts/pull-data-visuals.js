@@ -29,24 +29,27 @@ dataRef.orderByChild("gradTerm").on("child_added", function(data){
 
 });
 
-var numGraduated = [4, 13, 9, 15, 13];
-var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fall 2019'];
+var numGraduated = [];
+var gradSemester = [];
 
-var ctx = document.getElementById('myChart');
-var gradDateChart = new Chart(ctx, {
- type: 'line',
- data: {
-    labels: gradSemester,
-    datasets: [{
-        label: 'Graduation Dates',
-        data: numGraduated,
-        borderColor: "rgba(255,210,0,1)",
-        lineTension: .2
-    }]
- },
-});
 
-//var gradSemester = [];
+// var numGraduated = [4, 13, 9, 15, 13];
+// var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fall 2019'];
+//
+// var ctx = document.getElementById('myChart');
+// var gradDateChart = new Chart(ctx, {
+//  type: 'line',
+//  data: {
+//     labels: gradSemester,
+//     datasets: [{
+//         label: 'Graduation Dates',
+//         data: numGraduated,
+//         borderColor: "rgba(255,210,0,1)",
+//         lineTension: .2
+//     }]
+//  },
+// });
+
 
 
 
@@ -142,9 +145,39 @@ function numInGrad(temp){
 
 //////////////////////////////////////////
 
+var careerTitles = [];
 
+//get list of careerTitles into careerTitles array above
 
+var titleData = []; //2d array of titles and values
 
+function condenseTitles(){
+  for (var i = 0; i < careerTitles.length; i++) {
+    if (exists(titleData, careerTitles[i]) == true) {
+      //update value
+      for (var j = 0; j < titleData.length; j++) {
+      console.log("here2");
+        if (titleData[j][0] == careerTitles[i]) {
+          x = titleData[j][1];
+          console.log(x);
+          titleData[j][1] = x+1;
+        }
+      }
+    } else {
+      // append to titleData
+      console.log("here3");
+      titleData.push([careerTitles[i], 1]);
+    }
+  }
+}
+
+function exists(arr, search){
+	console.log("here");
+  return arr.some(row => row.includes(search));
+}
+
+condenseTitles();
+console.log(titleData);
 
 
 //////////////////////////////////////////
@@ -156,7 +189,39 @@ function numInGrad(temp){
 
 
 
+var companyNames = [];
 
+//get list of careerTitles into careerTitles array above
+
+var companyData = []; //2d array of titles and values
+
+function condenseCompanies(){
+  for (var i = 0; i < companyNames.length; i++) {
+    if (exists(companyData, companyNames[i]) == true) {
+      //update value
+      for (var j = 0; j < companyData.length; j++) {
+      console.log("here2");
+        if (companyData[j][0] ==companyNames[i]) {
+          x = companyData[j][1];
+          console.log(x);
+          companyData[j][1] = x+1;
+        }
+      }
+    } else {
+      // append to titleData
+      console.log("here3");
+      companyData.push([companyNames[i], 1]);
+    }
+  }
+}
+
+function exists(arr, search){
+	console.log("here");
+  return arr.some(row => row.includes(search));
+}
+
+condenseCompanies();
+console.log(companyData);
 
 
 
