@@ -43,7 +43,7 @@ var gradDateChart = new Chart(ctx, {
 var job_data = [
   {x: "UI/UX Engineer", value: 1},
   {x: "Systems & Human Factors Engineer", value: 1},
-  {x: "Software Developer", value: 4},
+  {x: "Software Developer", value: 5},
   {x: "UX Designer", value: 3},
   {x: "Administrative Assistant", value: 1},
   {x: "Graphic Designer", value: 3},
@@ -67,7 +67,7 @@ var job_data = [
   {x: "AV Technician & Warehouse Manager", value: 1},
   {x: "Assembler", value: 1},
   {x: "Front-End Designer & Developer", value: 1},
-  {x: "Entreprenuer & Owner", value: 2}
+  {x: "Entrepreneur & Owner", value: 2}
 ];
 
 
