@@ -32,6 +32,25 @@ dataRef.orderByChild("gradTerm").on("child_added", function(data){
 var numGraduated = [];
 var gradSemester = [];
 
+function fillGradArrays(){
+  for (var i = 0; i < gradDates.length; i++) {
+    if(gradSemester.includes(gradDates[i]) == true){
+      //update num in numGraduated
+      var x = gradSemester.indexOf(gradDates[i]);
+      var y = numGraduated[x]
+      numGraduated[x] = y+1;
+
+    } else {
+      //append to gradSemester and numGraduated
+      gradSemester.push(gradDates[i]);
+      numGraduated.push(1);
+    }
+  }
+}
+
+fillGradArrays();
+
+
 
 // var numGraduated = [4, 13, 9, 15, 13];
 // var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fall 2019'];
