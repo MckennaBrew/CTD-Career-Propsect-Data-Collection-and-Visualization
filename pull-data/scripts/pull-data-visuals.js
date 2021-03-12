@@ -309,7 +309,7 @@ var mapData = [
   {"id": "US.DC","value": 0}
 ];
 
-var locations = ['Colorado', 'California', 'Arizona', 'Colorado'];
+var locations = [];
 
 //get list of locations from database
 
