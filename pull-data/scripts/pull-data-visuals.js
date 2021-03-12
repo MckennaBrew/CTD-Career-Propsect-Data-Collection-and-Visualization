@@ -22,15 +22,16 @@ var dataRef = firebase.database().ref('alumni/');
 
 var gradDates = [];
 
+var numGraduated = [];
+var gradSemester = [];
+
 dataRef.orderByChild("gradTerm").on("child_added", function(data){
   console.log(data.val().gradTerm);
 
   gradDates.push(data.val().gradTerm.toString());
 
+  fillGradArrays();
 });
-
-var numGraduated = [];
-var gradSemester = [];
 
 function fillGradArrays(){
   for (var i = 0; i < gradDates.length; i++) {
@@ -47,8 +48,6 @@ function fillGradArrays(){
     }
   }
 }
-
-fillGradArrays();
 
 
 
@@ -166,9 +165,17 @@ function numInGrad(temp){
 
 var careerTitles = [];
 
-//get list of careerTitles into careerTitles array above
-
 var titleData = []; //2d array of titles and values
+
+//get list of careerTitles into careerTitles array above
+dataRef.orderByChild("jobTitle").on("child_added", function(data){
+  console.log(data.val().jobTitle);
+
+  gradProgram.push(data.val().jobTitle.toString());
+
+  condenseTitles();
+
+});
 
 function condenseTitles(){
   for (var i = 0; i < careerTitles.length; i++) {
@@ -192,9 +199,6 @@ function exists(arr, search){
   return arr.some(row => row.includes(search));
 }
 
-condenseTitles();
-console.log(titleData);
-
 
 //////////////////////////////////////////
 
@@ -206,10 +210,17 @@ console.log(titleData);
 
 
 var companyNames = [];
+var companyData = []; //2d array of titles and values
 
 //get list of careerTitles into careerTitles array above
+dataRef.orderByChild(companyName").on("child_added", function(data){
+  console.log(data.val().companyName);
 
-var companyData = []; //2d array of titles and values
+  gradProgram.push(data.val().companyName.toString());
+
+  condenseCompanies();
+
+});
 
 function condenseCompanies(){
   for (var i = 0; i < companyNames.length; i++) {
