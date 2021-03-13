@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Collectiviz CSS/JS -->
+    <link rel="stylesheet" type="text/css" href="form.css">
+
+    <script type="text/javascript" src="scripts/read-data.js" defer></script>
+
+    <title>CTD Alumni Form</title>
+
+  </head>
+
+<!-- BODY -->
+
+<body>
+
+  <div id="introduction" class="formSection">
+
+	<h1>Introduction</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Thank you for taking the time to complete this short survey. Your input helps us to reflect on the program and helps guide its future direction.</small></p>
+
+    <form>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Accessability Help: 'for needs to equal the input ID, aria-describedby needs to provide what the small text is for' -->
+
+    <div class="form-group">
+        <label for="first_name">First name *</label>
+        <input type="name" class="form-control" id="first_name" aria-describedby="nameHelp" placeholder="Enter first name">
+    </div>
+
+    <div class="form-group">
+        <label for="last_name">Last name *</label>
+        <input type="name" class="form-control" id="last_name" aria-describedby="nameHelp" placeholder="Enter last name">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email address *</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <fieldset class="form-group">
+        <legend class="legend">What is your current employment status? *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="workingForCompany" value="working for a company">
+          <label class="form-check-label" for="workingForCompany">
+            Working for a company
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="workingForSelf" value="working for myself">
+          <label class="form-check-label" for="workingForSelf">
+            Working for myself
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="notEmployed" value="not employed">
+          <label class="form-check-label" for="notEmployed">
+            Not employed
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="employementStatus" id="inSchool" value="in school">
+          <label class="form-check-label" for="inSchool">
+            In school
+          </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend class="legend">Are you enrolled in, or have you completed a graduate program? *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gradProgram" id="enrolled" value="Yes">
+          <label class="form-check-label" for="enrolled">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gradProgram" id="notEnrolled" value="No">
+          <label class="form-check-label" for="notEnrolled">
+            No
+          </label>
+        </div>
+    </fieldset>
+
+    </form>
+
+    <button onclick="secondFormPage()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="workExperience" class="formSection">
+  <h1>Work Experience</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Please share a few details about your work.</small></p>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="jobTitle1">Professional title</label>
+        <select class="form-control" id="jobTitle1">
+          <option selected disabled value>Select a job title *</option>
+          <option>Software Engineer</option>
+          <option>Graphic Designer</option>
+          <option>Web Designer</option>
+          <option>UX Designer</option>
+          <option>Quality Assurance Tester</option>
+          <option>Designer and Developer</option>
+          <option>other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <small><label for="jobTitle2">If not on list, please provide it below.</label></small>
+        <textarea class="form-control" id="jobTitle2" rows="1"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="companyName1">Business name</label>
+        <select class="form-control" id="companyName1">
+          <option selected disabled value>Select a company name *</option>
+          <option>Activision</option>
+          <option>Northrop Grumman</option>
+          <option>United Nations</option>
+          <option>JP Morgan Chase</option>
+          <option>Ford AV</option>
+          <option>NBC Universal</option>
+          <option>Meow Wolf</option>
+          <option>Naughty Dog</option>
+          <option>Walt Disney Company</option>
+          <option>other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <small><label for="companyName2">If not on list, please provide it below.</label></small>
+        <textarea class="form-control" id="companyName2" rows="1"></textarea>
+    </div>
+
+    <div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="dayToDay">What do you do on a day-to-day basis? *</label>
+        <textarea class="form-control" id="dayToDay" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="doNext">What do you hope to do next? *</label>
+        <textarea class="form-control" id="doNext" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="in5Years">What do you hope to be doing in 5 years? *</label>
+        <textarea class="form-control" id="in5Years" rows="3"></textarea>
+    </div>
+
+    </form>
+
+    <button onclick="thirdFormPage()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="graduateExperience" class="formSection">
+
+  <h1>Graduate Experience</h1>
+
+    <!-- Directions - not in bootstrap format -->
+    <p><small>Please share a few details about your graduate experience.</small></p>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="degreeProgram">What degree program at what university did you graduate from? *</label>
+        <textarea class="form-control" id="degreeProgram" rows="2"></textarea>
+        <small id="salaryHelp" class="form-text text-muted">For example, "Master's in Spanish Literature at University of Transylvania."</small>
+    </div>
+
+    <div class="form-group">
+        <label for="gradTerm">When did you or will you graduate? *</label>
+        <textarea class="form-control" id="gradTerm" rows="2"></textarea>
+        <small id="salaryHelp" class="form-text text-muted">For example, "Spring 2021"</small>
+    </div>
+
+    <button onclick="professionalPreparation()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="professionalPreparation" class="formSection">
+
+  <h1>Professional Preparation</h1>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="profGoals">What are your current professional goals? *</label>
+        <textarea class="form-control" id="profGoals" rows="2"></textarea>
+    </div>
+
+    <fieldset class="form-group">
+        <legend  class="legend">BS CTD has prepared me to achieve these goals. *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="preparedLevel" value="agree">
+          <label class="form-check-label" for="stronglyAgree">
+            Strongly agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="preparedLevel" value="agree">
+          <label class="form-check-label" for="Agree">
+            Agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="preparedLevel" value="agree">
+          <label class="form-check-label" for="kindaAgree">
+            Neither agree nor disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="preparedLevel" value="disagree">
+          <label class="form-check-label" for="Disagree">
+            Disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="prep" id="preparedLevel" value="disagree">
+          <label class="form-check-label" for="stronglyDisagree">
+            Strongly disagree
+          </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend  class="legend">I use the skills I learned through the CTD major frequently. *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="skillUse" value="agree">
+          <label class="form-check-label" for="stronglyAgree">
+            Strongly agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="skillUse" value="agree">
+          <label class="form-check-label" for="Agree">
+            Agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="skillUse" value="agree">
+          <label class="form-check-label" for="kindaAgree">
+            Neither agree nor disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="skillUse" value="disagree">
+          <label class="form-check-label" for="Disagree">
+            Disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="skillUse" id="skillUse" value="disagree">
+          <label class="form-check-label" for="stronglyDisagree">
+            Strongly disagree
+          </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend  class="legend">The CTD program helped influence my career and/or graduate education choices. *</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="ctdHelped" value="agree">
+          <label class="form-check-label" for="stronglyAgree">
+            Strongly agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="ctdHelped" value="agree">
+          <label class="form-check-label" for="Agree">
+            Agree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="ctdHelped" value="agree">
+          <label class="form-check-label" for="kindaAgree">
+            Neither agree nor disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="ctdHelped" value="disagree">
+          <label class="form-check-label" for="Disagree">
+            Disagree
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="influence" id="ctdHelped" value="disagree">
+          <label class="form-check-label" for="stronglyDisagree">
+            Strongly disagree
+          </label>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">On a scale of 0-10, how likely are you to recommend the TAM program to a student or prospective student? *</label>
+        <input class="form-control" id="likelyToRecommend" rows="1" type="number" min="0" max="10"></input>
+        <small id="NpsHelp" class="form-text text-muted">0 is "Not at all likely" while 10 is "Extremely likely."</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Please explain.</label>
+        <textarea class="form-control" id="whyRecommend" rows="3"></textarea>
+    </div>
+
+    </form>
+
+    <button onclick="ctdFeedback()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="ctdFeedback" class="formSection">
+
+  <h1>CTD Feedback</h1>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was your favorite part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="mostFav" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was your least favorite part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="leastFav" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was the most useful part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="mostUseful" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">What was the least useful part about being a student in the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="leastUseful" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">If you were the ATLAS director for a day, what would be the first change you would make to the Creative Technology & Design program? *</label>
+        <textarea class="form-control" id="firstChange" rows="3"></textarea>
+    </div>
+
+
+    </form>
+
+    <button onclick="lastThoughts()" type="bootstrap" class="btn btn-primary">Continue</button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <!-- ////////////////////////////////////// -->
+
+  <div id="lastThoughts" class="formSection">
+
+  <h1>Last Thoughts</h1>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Tell us a little more: Share a few thoughts or reflections on your experience in the CTD program, provide suggestions, or tell us more about what you're doing now and what you hope to do in the future. *</label>
+        <textarea class="form-control" id="finalThoughts" rows="3"></textarea>
+    </div>
+
+    <p>Thank you again for taking the time for this survey. We appreciate your input and your ongoing involvement in the ATLAS Institute.</p>
+
+    </form>
+
+    <a class="btn btn-outlined-secondary" href="#introduction" role="button">Review Form</a>
+
+    <button id="submitButton" type="bootstrap" class="btn btn-primary"> Submit! </button>
+
+  </div>
+
+    <div class="space"></div>
+
+  <div id="thankYou" class="formSection">
+
+    <h1>Thank You!</h1>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <p>Check out the public visualization and join the CTD LinkedIn group to stay connected.</p>
+
+  </div>
+
+    <div class="space"></div>
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+      <!-- link to database script file  -->
+      <script src="scripts/read-data.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+  </body>
+</html>
