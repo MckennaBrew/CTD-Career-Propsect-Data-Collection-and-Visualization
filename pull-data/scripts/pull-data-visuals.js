@@ -213,7 +213,7 @@ var companyNames = [];
 var companyData = []; //2d array of titles and values
 
 //get list of careerTitles into careerTitles array above
-dataRef.orderByChild(companyName").on("child_added", function(data){
+dataRef.orderByChild("companyName").on("child_added", function(data){
   console.log(data.val().companyName);
 
   gradProgram.push(data.val().companyName.toString());
