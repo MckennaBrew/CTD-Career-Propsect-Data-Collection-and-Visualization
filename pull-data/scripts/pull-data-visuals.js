@@ -22,31 +22,52 @@ var dataRef = firebase.database().ref('alumni/');
 
 var gradDates = [];
 
+var numGraduated = [];
+var gradSemester = [];
+
 dataRef.orderByChild("gradTerm").on("child_added", function(data){
   console.log(data.val().gradTerm);
 
   gradDates.push(data.val().gradTerm.toString());
 
+  fillGradArrays();
 });
 
-var numGraduated = [4, 13, 9, 15, 13];
-var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fall 2019'];
+function fillGradArrays(){
+  for (var i = 0; i < gradDates.length; i++) {
+    if(gradSemester.includes(gradDates[i]) == true){
+      //update num in numGraduated
+      var x = gradSemester.indexOf(gradDates[i]);
+      var y = numGraduated[x]
+      numGraduated[x] = y+1;
 
-var ctx = document.getElementById('myChart');
-var gradDateChart = new Chart(ctx, {
- type: 'line',
- data: {
-    labels: gradSemester,
-    datasets: [{
-        label: 'Graduation Dates',
-        data: numGraduated,
-        borderColor: "rgba(255,210,0,1)",
-        lineTension: .2
-    }]
- },
-});
+    } else {
+      //append to gradSemester and numGraduated
+      gradSemester.push(gradDates[i]);
+      numGraduated.push(1);
+    }
+  }
+}
 
-//var gradSemester = [];
+
+
+// var numGraduated = [4, 13, 9, 15, 13];
+// var gradSemester = ['Fall 2017', 'Spring 2018', 'Fall 2018', 'Spring 2019', 'Fall 2019'];
+//
+// var ctx = document.getElementById('myChart');
+// var gradDateChart = new Chart(ctx, {
+//  type: 'line',
+//  data: {
+//     labels: gradSemester,
+//     datasets: [{
+//         label: 'Graduation Dates',
+//         data: numGraduated,
+//         borderColor: "rgba(255,210,0,1)",
+//         lineTension: .2
+//     }]
+//  },
+// });
+
 
 
 
@@ -142,9 +163,41 @@ function numInGrad(temp){
 
 //////////////////////////////////////////
 
+var careerTitles = [];
 
+var titleData = []; //2d array of titles and values
 
+//get list of careerTitles into careerTitles array above
+dataRef.orderByChild("jobTitle").on("child_added", function(data){
+  console.log(data.val().jobTitle);
 
+  gradProgram.push(data.val().jobTitle.toString());
+
+  condenseTitles();
+
+});
+
+function condenseTitles(){
+  for (var i = 0; i < careerTitles.length; i++) {
+    if (exists(titleData, careerTitles[i]) == true) {
+      //update value
+      for (var j = 0; j < titleData.length; j++) {
+        if (titleData[j][0] == careerTitles[i]) {
+          x = titleData[j][1];
+          console.log(x);
+          titleData[j][1] = x+1;
+        }
+      }
+    } else {
+      // append to titleData
+      titleData.push([careerTitles[i], 1]);
+    }
+  }
+}
+
+function exists(arr, search){
+  return arr.some(row => row.includes(search));
+}
 
 
 //////////////////////////////////////////
@@ -156,7 +209,43 @@ function numInGrad(temp){
 
 
 
+var companyNames = [];
+var companyData = []; //2d array of titles and values
 
+//get list of careerTitles into careerTitles array above
+dataRef.orderByChild("companyName").on("child_added", function(data){
+  console.log(data.val().companyName);
+
+  gradProgram.push(data.val().companyName.toString());
+
+  condenseCompanies();
+
+});
+
+function condenseCompanies(){
+  for (var i = 0; i < companyNames.length; i++) {
+    if (exists(companyData, companyNames[i]) == true) {
+      //update value
+      for (var j = 0; j < companyData.length; j++) {
+        if (companyData[j][0] ==companyNames[i]) {
+          x = companyData[j][1];
+          console.log(x);
+          companyData[j][1] = x+1;
+        }
+      }
+    } else {
+      // append to titleData
+      companyData.push([companyNames[i], 1]);
+    }
+  }
+}
+
+function exists(arr, search){
+  return arr.some(row => row.includes(search));
+}
+
+condenseCompanies();
+console.log(companyData);
 
 
 
@@ -166,10 +255,156 @@ function numInGrad(temp){
 
 //////////////////////////////////////////
 
+var mapData = [
+  {"id": "US.MA","value": 0},
+  {"id": "US.MN","value": 0},
+  {"id": "US.MT","value": 0},
+  {"id": "US.ND","value": 0},
+  {"id": "US.HI","value": 0},
+  {"id": "US.ID","value": 0},
+  {"id": "US.WA","value": 0},
+  {"id": "US.AZ","value": 0},
+  {"id": "US.CA","value": 0},
+  {"id": "US.CO","value": 0},
+  {"id": "US.NV","value": 0},
+  {"id": "US.NM","value": 0},
+  {"id": "US.OR","value": 0},
+  {"id": "US.UT","value": 0},
+  {"id": "US.WY","value": 0},
+  {"id": "US.AR","value": 0},
+  {"id": "US.IA","value": 0},
+  {"id": "US.KS","value": 0},
+  {"id": "US.MO","value": 0},
+  {"id": "US.NE","value": 0},
+  {"id": "US.OK","value": 0},
+  {"id": "US.SD","value": 0},
+  {"id": "US.LA","value": 0},
+  {"id": "US.TX","value": 0},
+  {"id": "US.CT","value": 0},
+  {"id": "US.NH","value": 0},
+  {"id": "US.RI","value": 0},
+  {"id": "US.VT","value": 0},
+  {"id": "US.AL","value": 0},
+  {"id": "US.FL","value": 0},
+  {"id": "US.GA","value": 0},
+  {"id": "US.MS","value": 0},
+  {"id": "US.SC","value": 0},
+  {"id": "US.IL","value": 0},
+  {"id": "US.IN","value": 0},
+  {"id": "US.KY","value": 0},
+  {"id": "US.NC","value": 0},
+  {"id": "US.OH","value": 0},
+  {"id": "US.TN","value": 0},
+  {"id": "US.VA","value": 0},
+  {"id": "US.WI","value": 0},
+  {"id": "US.WV","value": 0},
+  {"id": "US.DE","value": 0},
+  {"id": "US.MD","value": 0},
+  {"id": "US.NJ","value": 0},
+  {"id": "US.NY","value": 0},
+  {"id": "US.PA","value": 0},
+  {"id": "US.ME","value": 0},
+  {"id": "US.MI","value": 0},
+  {"id": "US.AK","value": 0},
+  {"id": "US.DC","value": 0}
+];
 
+var locations = [];
 
+//get list of locations from database
 
+function countLocations(){
+    for (var i = 0; i < locations.length; i++) {
+      var name = "US." + abbrState(locations[i], 'abbr');
+      for (var j = 0; j < mapData.length; j++) {
+        if (name == mapData[j].id) {
+          mapData[j].value++;
+        }
+      }
+    }
+}
 
+function abbrState(input, to){
+
+    var states = [
+        ['Arizona', 'AZ'],
+        ['Alabama', 'AL'],
+        ['Alaska', 'AK'],
+        ['Arkansas', 'AR'],
+        ['California', 'CA'],
+        ['Colorado', 'CO'],
+        ['Connecticut', 'CT'],
+        ['Delaware', 'DE'],
+        ['Florida', 'FL'],
+        ['Georgia', 'GA'],
+        ['Hawaii', 'HI'],
+        ['Idaho', 'ID'],
+        ['Illinois', 'IL'],
+        ['Indiana', 'IN'],
+        ['Iowa', 'IA'],
+        ['Kansas', 'KS'],
+        ['Kentucky', 'KY'],
+        ['Louisiana', 'LA'],
+        ['Maine', 'ME'],
+        ['Maryland', 'MD'],
+        ['Massachusetts', 'MA'],
+        ['Michigan', 'MI'],
+        ['Minnesota', 'MN'],
+        ['Mississippi', 'MS'],
+        ['Missouri', 'MO'],
+        ['Montana', 'MT'],
+        ['Nebraska', 'NE'],
+        ['Nevada', 'NV'],
+        ['New Hampshire', 'NH'],
+        ['New Jersey', 'NJ'],
+        ['New Mexico', 'NM'],
+        ['New York', 'NY'],
+        ['North Carolina', 'NC'],
+        ['North Dakota', 'ND'],
+        ['Ohio', 'OH'],
+        ['Oklahoma', 'OK'],
+        ['Oregon', 'OR'],
+        ['Pennsylvania', 'PA'],
+        ['Rhode Island', 'RI'],
+        ['South Carolina', 'SC'],
+        ['South Dakota', 'SD'],
+        ['Tennessee', 'TN'],
+        ['Texas', 'TX'],
+        ['Utah', 'UT'],
+        ['Vermont', 'VT'],
+        ['Virginia', 'VA'],
+        ['Washington', 'WA'],
+        ['West Virginia', 'WV'],
+        ['Wisconsin', 'WI'],
+        ['Wyoming', 'WY'],
+    ];
+
+    if (to == 'abbr'){
+        input = input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        for(i = 0; i < states.length; i++){
+            if(states[i][0] == input){
+                return(states[i][1]);
+            }
+        }
+    } else if (to == 'name'){
+        input = input.toUpperCase();
+        for(i = 0; i < states.length; i++){
+            if(states[i][1] == input){
+                return(states[i][0]);
+            }
+        }
+    }
+}
+
+countLocations();
+
+//map testing
+// var mapData = [];
+// mapData.push({"id": "US.MA", "value": 0});
+// mapData[0].value++;
+//
+// var name = "US." + abbrState('Colorado', 'abbr');
+// console.log(name);
 
 
 
