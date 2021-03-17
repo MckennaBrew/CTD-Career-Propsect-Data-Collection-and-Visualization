@@ -80,10 +80,10 @@ function lastThoughts(){
 	location.href = "#lastThoughts";
 }
 
-/* function submit(){
+function submit(){
 	location.href = "#thankYou";
-	startConfetti();
-} */
+	//startConfetti();
+}
 
 
 /////////////////////////////////////////////////
@@ -125,6 +125,12 @@ function pushNewData(e){
 
   var email = document.getElementById('email').value; // entry
   console.log(email);
+
+	var location = document.getElementById('location').value; // entry
+	console.log(location);
+
+	var gradDate = document.getElementById('gradDate').value; // entry
+	console.log(gradDate);
 
   // var employmentStatus = document.getElementById('employmentStatus').value; // radio
 	var employmentStatus = document.querySelector('input[name = "employementStatus"]:checked').value; // radio
@@ -222,6 +228,8 @@ function pushNewData(e){
      'firstName': first_name,
 		 'lastName': last_name,
      'userEmail': email,
+		 'location': location,
+		 'gradDate': gradDate,
 		 'employmentStatus': employmentStatus,
 		 'gradProgram': gradProgram,
 		 'jobTitle': jobTitle,
@@ -244,6 +252,9 @@ function pushNewData(e){
 		 'firstChange': firstChange,
 		 'finalThoughts': finalThoughts
    })
+
+	 submit()
+	 //startConfetti();
  }
 
 document.getElementById('submitButton').addEventListener('click', pushNewData, false);
