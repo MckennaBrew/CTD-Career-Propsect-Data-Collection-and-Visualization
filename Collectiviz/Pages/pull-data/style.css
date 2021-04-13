@@ -1,0 +1,562 @@
+/* notes
+
+foo needs to be taken out
+discuss which data will be entered
+make sure select menus have default value and there aren't repeats
+deal with chart.js scaling bug
+ideally make career titles selected by default
+make sure data viz validates on W3C
+
+
+*/
+
+
+@import url("https://use.typekit.net/cgz8kbk.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&display=swap');
+
+.container { /*A box that will contain the entire website for centering purposes*/
+	max-width: 100vw;
+	margin: auto; /*This line of code is the key.  0px margin top and bottom, auto margin left and right to center*/
+	padding: 0px;
+	box-sizing:border-box;/*Makes it so that padding does not add to a box's total width*/
+
+	display:flex; /*container acts like flexbox, puts things side to side if there is room*/
+	flex-wrap: wrap; /*wrap, nowrap, wrap-reverse*/
+	flex-direction:row; /*row, row-reverse, column, column-reverse*/
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  /*max-width: 1600px; /* or 950px */
+}
+
+html {
+	padding: 0px;
+  	margin: 0px;
+  	scroll-behavior: smooth;
+}
+
+/* Header Formatting*/
+
+header{
+	width:100%;
+	height: 200px;
+	/*max-width: 1080px;*/
+	margin: auto;
+	background-color: #0e0e0e;
+	padding:40px;
+	box-sizing:border-box;
+	/*text-align:center; left, right, center, justify*/
+	color: white;
+}
+
+.header-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: auto;
+	max-width: 1800px;
+}
+
+#navigationHeader {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-align: right;
+	/*padding-right: 50px;*/
+	width: 100%;
+}
+
+#bsctdHeader {
+	text-align: left;
+	/*padding-left: 50px;*/
+	width: 100%;
+}
+
+h1 {
+	font-size: 24px;
+	font-family: 'Roboto Mono', mono;
+	font-weight: 700;
+	line-height: 20px;
+	color: white;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+.main-nav {
+	padding-right: 0px;
+	border-left: 2px solid #ccc;
+	flex-basis: auto;
+    padding: 0 5px;
+}
+
+#overviewNav {
+	border-left: none;
+}
+
+#headerBS {
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 40px;
+	text-transform: none;
+	text-align: left;
+}
+
+h2 {
+	font-size: 20px;
+	font-family: 'Roboto Mono', mono;
+	font-weight: 600;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 30px;
+	line-height: 30px;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 700;
+	margin-bottom: 4px;
+}
+
+h4 {
+	font-size: 24px;
+	font-family: 'Roboto Mono', mono;
+	font-weight: 700;
+	line-height: 20px;
+	color: white;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+/*Special Styling for the h3 numbers*/
+.stat {
+	font-size: 50px;
+	font-family: 'Roboto Mono', mono;
+	font-weight: 700;
+	color: #052CF3;
+	outline: black;
+	padding-top: 15px;
+}
+
+/*Special styling for the p under stats*/
+.statP {
+	/*max-width: 200px;*/
+/*	margin-left: 100px;
+	margin-right: 100px;*/
+	padding-top: 15px;
+}
+
+p {
+	font-size: 20px;
+	line-height: 28px;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 400;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+a {
+	font-size: 24px;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 400;
+	padding: 10px;
+	padding-left: 0px;
+	color: white;
+}
+
+a:hover {
+	color: #FFD200;
+}
+
+#svg {
+	max-width: 100px;
+}
+
+.section_title {
+	flex: 100%;
+	background-color: #FFD200;
+	color: black;
+	text-align: center;
+	padding: 15px;
+}
+
+#instructions {
+	text-align: center;
+	width: 100%;
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#overthis-div {
+	display: table;
+/*	border: 3px solid red;
+*/	align-items: center;
+	width: 100%;
+}
+
+.graduationDate{
+	display: table-cell;
+	width: 60%;
+	background-color: #0e0e0e;
+	color: white;
+	padding: 30px;
+	padding-left: 10%;
+	text-align: left;
+	min-height: 100%;
+	box-sizing:border-box;
+}
+.chart-container {
+	max-width: 800px;
+	max-height: 400px;
+	padding: 20px;
+}
+
+.initialStats{
+	display: table-cell;
+	flex: 40%;
+	width: 40%;
+	background-color: white;
+	text-align: center;
+	padding: 30px;
+	padding-right: 10%;
+/*	border: 3px solid red;
+*/}
+
+
+.job_and_company_data{
+	flex: 100%;
+	background-color: #0e0e0e;
+	text-align: center;
+	color:white;
+	padding: 30px;
+	padding-left: 10%;
+	padding-right: 10%;
+	justify-content: center;
+
+}
+
+.location{
+	flex: 100%;
+	text-align: center;
+	padding: 30px;
+	padding-left: 10%;
+	padding-right: 10%;
+	/* padding-left: 10%;
+	padding-right: 10%; */
+}
+
+#reflect-div {
+	display: table;
+/*	border: 3px solid red;
+*/	align-items: center;
+	width: 100%;
+}
+
+.reflectionStats{
+	display: table-cell;
+	flex: 40%;
+	width: 40%;
+	background-color: white;
+	text-align: center;
+	padding: 30px;
+	padding-left: 10%;
+/*	border: 3px solid red;
+*/}
+
+.alumniQuotes{
+	display: table-cell;
+	flex: 60%;
+	width: 60%;
+	background-color: #0e0e0e;
+	color: white;
+	padding: 30px 10% 30px 10%;
+	text-align: left;
+	min-height: 100%;
+	box-sizing:border-box;
+	justify-content: center;
+	align-items: center;
+}
+
+.alumniSpotlight{
+	flex: 100%;
+	background-color: #0e0e0e;
+	color:white;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#alumniSpotlightH3 {
+	text-align: center;
+	padding-top: 30px;
+}
+
+.carousel{
+	margin-top: 20px;
+
+}
+.carousel-item{
+	min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+
+/*Indicators at bottom*/
+.carousel-indicators {
+	background-color: rgb(15,15,15);
+}
+
+#cropped {
+	display: flex;
+	justify-content: center;
+	/* align-items: top; */
+	background-color: rgb(15,15,15);
+	padding: 30px;
+	height: 800px;
+	overflow: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+  hide scroll bar*/
+}
+
+#cropped::-webkit-scrollbar { /* WebKit  hide scroll bar*/
+    width: 0;
+    height: 0;
+}
+
+#profile {
+	flex: 20%;
+	/*width: 400px;*/
+	max-width: 800px;
+	margin-top: 5%;
+}
+
+.profileImg {
+	max-width: 200px;
+	margin: 0;
+
+}
+
+#qAndA {
+	flex: 80%;
+	/*width: 1000px;*/
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	top: 20px;
+
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	width: 100%;
+	margin: auto;
+	background-color: #0e0e0e;
+	padding: 40px;
+	box-sizing:border-box;
+	text-align:left; /*left, right, center, justify*/
+	color: white;
+}
+
+#logo {
+	width: 30%;
+}
+
+#svg-footer {
+	max-height: 20px;
+	width: auto;
+}
+
+#about {
+	width: 30%;
+}
+
+#questions {
+	width: 30%;
+}
+
+@media screen and (max-width: 950px) {
+		.flex-container {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		#cropped {
+			justify-content: center;
+			align-items: center;
+			background-color: rgb(15,15,15);
+			padding: 30px;
+			height: auto;
+			overflow: visible;
+		}
+
+		#reflect-div {
+			display: inline-block;
+			align-items: center;
+		}
+
+		.alumniQuotes{
+			display: inline-block;
+			flex: 100%;
+			width: 100%;
+			padding-left: 30px;
+		}
+
+		.reflectionStats{
+			display: inline-block;
+			flex: 100%;
+			padding-left: 30px;
+			width: 100%;
+
+		}
+
+		.alumniSpotlight {
+			padding: 30px;
+		}
+
+		h4, h2 {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			text-align: center;
+		}
+
+		h1 {
+			text-align: right;
+			font-size: 20px;
+		}
+
+		.iconSet {
+			text-align: center;
+		}
+
+/*		.scroll-container {
+			max-height: 50vh;
+			overflow-y: auto;
+		}*/
+
+		#profile, #qAndA   {
+			margin-left: 0%;
+			margin-right: 0%;
+			width: 100%;
+		}
+
+		/*Need to center profile pictures on mobile*/
+
+		.profileImg {
+			max-width: 30%;
+			display: block;
+  			margin-left: auto;
+  			margin-right: auto;
+		}
+
+/*		.graduationDate{
+			flex: auto;
+			width: 100%;
+			height: 100%;
+		}*/
+
+		.chart-container {
+			max-width: 600px;
+			max-height: 400px;
+			padding-top: 20px;
+		}
+
+		.initialStats{
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+
+
+		#overthis-div {
+			display: inline-block;
+			align-items: center;
+		}
+
+		.initialStats{
+			display: inline-block;
+			flex: 100%;
+			width: 100%;
+			padding-left: 30px;
+		}
+
+		.graduationDate{
+			display: inline-block;
+			flex: 100%;
+			padding-left: 40px;
+			width: 100%;
+			padding-right: 40px;
+			padding-top: 30px;
+			text-align: center;
+		}
+
+		/* Header Formatting*/
+
+		header{
+			padding:10px;
+			padding-top: 40px;
+		}
+
+		.header-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		#navigationHeader {
+			padding-right: 10px;
+		}
+
+		#bsctdHeader {
+			padding-left: 10px;
+			padding-top: 10px;
+		}
+
+		a {
+			font-size: 20px;
+		}
+
+		#svg {
+			max-width: 50px;
+		}
+
+		#headerBS {
+			font-size: 30px;
+		}
+
+		footer {
+
+			padding: 20px;
+		}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	footer {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	#logo {
+		width: 100%;
+	}
+
+	#about {
+		width: 100%;
+	}
+
+	#questions {
+		width: 100%;
+	}
+
+}

@@ -1,0 +1,70 @@
+@import url('https://use.typekit.net/cgz8kbk.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&display=swap');
+
+html {
+	scroll-behavior: smooth;
+	overflow: hidden;
+}
+body {
+	max-width: 1000px;
+	padding-top: 0px;
+	padding-bottom: 50px;
+	margin: auto;
+	padding-right: 5%;
+	padding-left: 5%;
+	overflow: hidden;
+	font-family: neue-haas-grotesk-display, sans-serif;
+}
+h1 {
+	font-family: Roboto Mono, monospace; //no quotes!
+	font-weight: 700;
+	color: black;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+p {
+	font-size: 18px;
+	line-height: 18px;
+}
+small {
+	font-style: italic;
+}
+input {
+    font-family: neue-haas-grotesk-display, sans-serif;
+}
+textarea {
+	font-family: neue-haas-grotesk-display, sans-serif;
+}
+.legend {
+	font-size: 16px;
+}
+.progress-bar {
+	background-color: rgb(5, 44, 243);
+}
+.btn-primary {
+	background-color: rgb(5, 44, 243);
+}
+.progress {
+	margin-bottom: 30px;
+}
+.btn-outlined-secondary {
+	color: rgb(5, 44, 243);
+}
+.space {
+	height: 800px;
+}
+.formSection {
+	overflow: scroll;
+	height: 100vh;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+/*https://css-tricks.com/forums/topic/hide-vertical-scrollbar-but-still-scrollable/*/
+::-webkit-scrollbar {
+display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.formSection {
+		padding-bottom: 150px; }
+}

@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "collectiviz-1"
+  },
+  "targets": {
+    "collectiviz-1": {
+      "hosting": {
+        "visuals": [
+          "collectiviz-data"
+        ],
+        "form": [
+          "collectiviz-1"
+        ]
+      }
+    }
+  }
+}

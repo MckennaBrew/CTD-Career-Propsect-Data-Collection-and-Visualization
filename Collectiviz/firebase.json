@@ -1,0 +1,34 @@
+{
+  "hosting": [
+      {
+       "target": "form",
+       "public": "Pages/push-data",
+       "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+       ],
+       "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+      {
+       "target": "visuals",
+       "public": "Pages/pull-data",
+       "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+       ],
+       "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
