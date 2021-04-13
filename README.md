@@ -1,1 +1,2 @@
-# CTD-Career-Propsect-Data-Collection-and-Visualization
+# Collectiviz
+CTD Career Prospect Data Collection and Visualization
